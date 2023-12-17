@@ -1,0 +1,33 @@
+.logonavbar {
+    color: #ff0000;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+
+.layanan{
+    font-weight: 300;
+    color: black;
+    
+
+}
+
+.posisilogo{
+    width: 500;
+    height: 500;
+    top: 5000px;
+    left: 1000px;
+
+}
+
+.card-img-top{
+    width: 500;
+    height: 500;
+
+}
+
+.card-title{
+    text-align: center;
+}
