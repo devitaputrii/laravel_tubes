@@ -15,11 +15,7 @@
 }
 
 .posisilogo{
-    width: 500;
-    height: 500;
-    top: 5000px;
-    left: 1000px;
-
+    row-gap: 200;
 }
 
 .card-img-top{
@@ -31,3 +27,4 @@
 .card-title{
     text-align: center;
 }
+

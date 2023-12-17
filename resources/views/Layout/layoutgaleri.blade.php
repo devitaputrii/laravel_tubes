@@ -20,8 +20,10 @@
 
 
             @include('page.navbar')
-            @yield('konten')
+            @include('page.galeri')
             @include('page.footer')
+            
+
 
     </body>
 </html>
