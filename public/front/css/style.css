@@ -15,11 +15,7 @@
 }
 
 .posisilogo{
-    width: 500;
-    height: 500;
-    top: 5000px;
-    left: 1000px;
-
+    row-gap: 200;
 }
 
 .card-img-top{
@@ -32,7 +28,10 @@
     text-align: center;
 }
 
+<<<<<<< HEAD
 
 .card{
     background-color: rgb(90, 181, 132);
 }
+=======
+>>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4

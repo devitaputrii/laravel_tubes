@@ -75,4 +75,9 @@
 
 @include('page.footer')
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+>>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4
