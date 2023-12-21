@@ -1,7 +1,15 @@
-{{-- <!--awal KONTEN-->
-<div class="col-md-9">
-    @yield('isihalaman')                 
-</div>
-<!--akhir KONTEN-->
-</div>
-</div> --}}
+<?php
+
+if(isset($_GET['url'])){
+    $url=$_ GET['url'];
+
+    switch ($url) {
+        case 'galeri':
+           include "page.galery"
+            break;
+        
+        default:
+            # code...
+            break;
+    }
+}
