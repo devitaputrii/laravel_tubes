@@ -22,7 +22,7 @@
 
 <div class="card-group">
   <div class="card">
-    <img src="/gambar/mesin cuci.jpeg" class="card-img-top" alt="...">
+    <img src="/gambar/mesincuci.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Mesin Cuci Berkulitas</h5>
       <p class="card-text">Mesin cuci kami memiliki kualitas kapasitas yang cukup besar untuk menampung jumlah cucian yang signifikan. Hal ini memungkinkan ntuk mencuci sejumlah besar pakaian sekaligus, mengurangi frekuensi mencuci.</p>
@@ -30,7 +30,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="/gambar/lokasi laundry.jpeg" class="card-img-top" alt="...">
+    <img src="/gambar/timbangan.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Lokasi Strategis</h5>
       <p class="card-text">Lokasi laundry yang strategis mudah diakses oleh customer, Terlertak di daerah Sukabirus dekat dengan Kampus Telkom .</p>
@@ -38,7 +38,7 @@
     </div>
   </div>
   <div class="card">
-    <img src="/gambar/rak penyimpanan.jpeg" class="card-img-top" alt="...">
+    <img src="/gambar/rak.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">Tempat Penyimpanan</h5>
       <p class="card-text">Memiliki tempat penyimpanan dengan ruangan yang bersih dan aman untuk menjaga pakaian pelanggan tetap terjaga kualitasnya. Kebersihan dan keamanan lingkungan penyimpanan sangat penting untuk memastikan bahwa pakaian tetap dalam kondisi terbaik.</p>
