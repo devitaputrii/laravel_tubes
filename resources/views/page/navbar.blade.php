@@ -7,7 +7,6 @@
 
       <span style="font-size: 20px;" class="navbar-brand">Key's Laundry</span>
     </a>
-
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Daftar Harga</a></li>
@@ -17,6 +16,9 @@
       <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
     </ul>
   </header>
+
+</div>
+
 </div>
 </div>
       <ul class="nav nav-pills">
@@ -29,3 +31,4 @@
       </ul>
     </header>
   </div>
+
