@@ -1,6 +1,6 @@
-@extends('Layout.index')
+@extends('layouts.app')
 
-@section('konten')
+@section('content')
   
     <main class="container">
         <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">

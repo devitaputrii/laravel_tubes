@@ -13,30 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('page.home');
 });
 
-<<<<<<< HEAD
-Route::get('/home', function () {
-    return view('page.home');
-});
-
-
-
-=======
->>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4
 Route::get('/galeri', function () {
     return view('page.galeri');
 });
 
 Route::get('/keluhan', function () {
     return view('page.keluhan');
-<<<<<<< HEAD
 });
 
-Route::get('/login', function () {
-    return view('page.login');
-=======
->>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4
-});
+// Route::get('/login', function () {
+//     return view('page.login');
+// });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

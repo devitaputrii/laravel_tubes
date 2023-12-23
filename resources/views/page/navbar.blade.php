@@ -7,8 +7,6 @@
 
       <span style="font-size: 20px;" class="navbar-brand">Key's Laundry</span>
     </a>
-
-<<<<<<< HEAD
     <ul class="nav nav-pills">
       <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link">Daftar Harga</a></li>
@@ -19,15 +17,3 @@
     </ul>
   </header>
 </div>
-=======
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/home" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Daftar Harga</a></li>
-        <li class="nav-item"><a href="/keluhan" class="nav-link">Komplain</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Ulasan</a></li>
-        <li class="nav-item"><a href="/galeri" class="nav-link">Galeri</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-      </ul>
-    </header>
-  </div>
->>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4
