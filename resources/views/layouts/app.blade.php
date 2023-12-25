@@ -36,7 +36,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Daftar Harga</a></li>
+                        <li class="nav-item"><a href="daftar_harga" class="nav-link">Daftar Harga</a></li>
                         <li class="nav-item"><a href="/keluhan" class="nav-link">Komplain</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Ulasan</a></li>
                         <li class="nav-item"><a href="/galeri" class="nav-link">Galeri</a></li>

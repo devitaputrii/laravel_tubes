@@ -21,6 +21,10 @@ Route::get('/galeri', function () {
     return view('page.galeri');
 });
 
+Route::get('/daftar_harga', function () {
+    return view('daftar_harga');
+});
+
 Route::get('/keluhan', function () {
     return view('page.keluhan');
 });
