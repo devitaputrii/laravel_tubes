@@ -1,53 +1,297 @@
 @extends('layouts.app')
 
 @section('content')
-  
-    <main class="container">
-        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-          <div class="col-lg-6 px-0">
-            <h1 class="fw-light"><b>Jasa Laundry Express Terbaik di Bandung</b></h1>
-            <p class="lead my-3">Selamat datang di Key's Laundry, destinasi terbaik untuk kebutuhan laundry Anda! Kami memahami betapa berharganya waktu Anda, 
-              dan itulah mengapa kami hadir untuk membuat hidup Anda lebih mudah dengan layanan laundry berkualitas tinggi.</p>
-              <img  src="{{ asset('/gambar/logo laundry.png')}}"  class="posisilogo" alt="..." > 
-          </div>
+    <!--? slider Area Start-->
+    <section class="slider-area hero-overly">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-9">
+                            <div class="hero__caption">
+                                <h1 data-animation="fadeInLeft" data-delay="0.2s">Key's Laundry</h1>
+                                <p data-animation="fadeInLeft" data-delay="0.4s">Jasa Laundry Express terbaik di Bandung, kami hadir untuk penuhi kebutuhan laundry Anda</p>
+                                <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Layanan Kami</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+            </div>
         </div>
+    </section>
+    <!-- slider Area End-->
 
-        <section class="py-5 text-center container ">
-            <div class="row py-lg">
-              <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="layanan"><b>Layanan Kami</b></h1>
-          </section>
+    <!--? Services Area Start -->
+    <section class="services-area pt-top border-bottom pb-20 mb-60">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <span class="element">Proses kami</span>
+                        <h2>Bagaimana kami bekerja</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-icon">
+                            <img src="{{ asset('/img/icon/time-fast-svgrepo-com.svg') }}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="/layanan">Proses Pengerjaan Kilat</a></h5>
+                            <p>KEY’S Laundry Telkom University memiliki salah satu keunggulan, yaitu proses pengerjaan KILAT terhadap laundry pelanggan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-icon">
+                            <img src="{{ asset('/img/icon/services-icon2.svg') }}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Laundry Berkualitas</a></h5>
+                            <p>KEY’S Laundry Telkom University selalu menjaga kualitas pakaian anda dengan hanya menggunakan deterjen pilihan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-icon">
+                            <img src="{{ asset('/img/icon/indonesian-rupiah-indonesia-svgrepo-com.svg')}}" alt="">
+                        </div>
+                        <div class="cat-cap">
+                            <h5><a href="services.html">Harga Terjangkau</a></h5>
+                            <p>KEY’S Laundry Telkom University memiliki harga yang terjangkau untuk mahasiswa Telkom hanya Rp6000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services End -->
     
-          <div class="card-group ">
-            <div class="card  ">
-              <div class="card-body bg-b">
-                <h5 class="card-title">Proses Pengerjaan Kilat</h5>
-                <p class="card-text">KEY’S Laundry Telkom University memiliki salah satu keunggulan yang - sangat unggul yaitu proses pengerjaan KILAT terhadap laundry pelanggan.
-                     KEY’S Laundry  memiliki beberapa pilihan layanan proses pengerjaan laundry yaitu LAUNDRY EXPRESS 1 HARI, 
-                    LAUNDRY EXPRESS 2 HARI, DANLAUNDRY EXPRESS 3 HARI, sesuai dengan kebutuhan Anda.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-
+    <!--? Offer-services Start  -->
+    <section class="offer-services pb-bottom2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <span class="element">Layanan</span>
+                        <h2>Layanan yang kami tawarkan</h2>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Laundry Berkualitas</h5>
-                <p class="card-text">KEY’S Laundry Telkom University selalu mengecek ulang kualitas yang dikeriakan oleh karyawan kami. Bahan-bahan yang digunakan merupakan bahan-bahan
-                     kualitas dan di olah sendiri oleh laundry kami. Dari pengerjaan yang selalu double check, bahan pencucian yang digunakan terjamin, hingga proses penyetrikaan karyawan 
-                     selalu menjaga kulaitas agar menghasilkan hasil laundry yang baik.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
+            <div class="row no-gutters">
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-offers">
+                        <img src="{{ asset('/img/gallery/offers4.png') }}" alt="" class=" w-100">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-offers">
+                        <img src="{{ asset('/img/gallery/offers2.png' )}}" alt="" class=" w-100">
+                        <div class="offers-caption text-center">
+                            <div class="cat-icon">
+                                <img src="{{ asset('/img/icon/offers-icon1.png' )}}" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="services.html">Laundry Reguler</a></h5>
+                                <p>Hanya dengan Rp6.000/Kg kami jamin pakaian Anda kembali bersih dan wangi!!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-offers">
+                        <img src="{{ asset('/img/gallery/offers2.png') }}" alt="" class=" w-100">
+                        <div class="offers-caption text-center">
+                            <div class="cat-icon">
+                                <img src="{{ asset('/img/icon/offers-icon1.png') }}" alt="">
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="services.html">Laundry Kilat</a></h5>
+                                <p>5 jam kami jamin sudah sampai ditangan Anda, mulai dari Rp10.000/Kg!!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-offers">
+                        <img src="{{ asset('/img/gallery/offers1.png' )}}" alt="" class=" w-100">
+                    </div>
+                </div>
             </div>
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Harga Terjangkau</h5>
-                <p class="card-text">KEY’S Laundry Telkom University memiliki harga yang terjangkau untuk anak anak mahasiswa Telkom dengan enam ribu rupiah </p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
+        </div>
+    </section>
+    <!-- Offer-services End  -->
+    
+    <!--? Want To work -->
+    <section class="container">
+        <section class="wantToWork-area" data-background="{{ asset('/img/gallery/section_bg01.png' )}}">
+            <div class="wants-wrapper w-padding2">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-8 col-lg-9 col-md-7">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            <h2>Butuh jasa kami?</h2>
+                            <p>Kami jamin pakaian Anda kembali seperti baru</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5">
+                        <a href="#" class="btn wantToWork-btn"><img src="{{ asset('/img/icon/call2.png' )}}" alt=""> Hungi kami</a>
+                    </div>
+                </div>
             </div>
-          </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-
-
+        </section>
+    </section>
+    <!-- Want To work End -->
+    
+    <!-- Testimonials_start -->
+    <section class="testimonials-area testimonials-overly  position-relative">
+        <div class="container">
+            <div class="border-bottom section-padding40 ">
+                <div class="row">
+                    <div class="col-xl-12 ">
+                        <!-- testmonial-image -->
+                        <div class="testmonial-nav text-center">
+                            <div class="testmonial-thumb">
+                                <img src="{{ asset('/img/gallery/testimonila1.png' )}}" alt="">
+                            </div>
+                            <div class="testmonial-thumb">
+                                <img src="{{ asset('/img/gallery/testimonila2.png' )}}" alt="">
+                            </div>
+                            <div class="testmonial-thumb">
+                                <img src="{{ asset('/img/gallery/testimonila3.png' )}}" alt="">
+                            </div>
+                            <div class="testmonial-thumb">
+                                <img src="{{ asset('/img/gallery/testimonila2.png' )}}" alt="">
+                            </div>
+                        </div>
+                        <div class="testmonial-item-active text-center">
+                            <!-- testimonial-single-items -->
+                            <div class="testmonial-item ">
+                                <p class="pera">The automated process starts as soon as your clothes go into the<br> machine. The outcome is gleaming clothes!</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p> - Rupaya</p>
+                            </div>
+                            <!-- testimonial-single-items -->
+                            <div class="testmonial-item ">
+                                <p class="pera">The automated process starts as soon as your clothes go into the<br> machine. The outcome is gleaming clothes!</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p> - Rupaya</p>
+                            </div>
+                            <!-- testimonial-single-items -->
+                            <div class="testmonial-item ">
+                                <p class="pera">The automated process starts as soon as your clothes go into the<br> machine. The outcome is gleaming clothes!</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p> - Rupaya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials_end -->
+    
+    <!--? Company achievement Start -->
+    <!-- <section class="services-area section-padding40 fix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <span class="element">Fun Fact</span>
+                        <h2>Company achievement</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>4000</span>
+                            <p>The automated process starts as soon as your clothes go into the machine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>300+</span>
+                            <p>The automated process starts as soon as your clothes go into the machine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>95%</span>
+                            <p>The automated process starts as soon as your clothes go into the machine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bottom-bt">
+                            <img src="{{ asset('/img/gallery/company-bg.png' )}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Company achievement End -->
+    
+    <!--? About Area  -->
+    <section class="about-area2 pb-bottom mt-30">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <!-- about-img -->
+                    <div class="about-img ">
+                        <img src="{{ asset('/gambar/lokasi laundry.jpeg' )}}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="about-caption mb-50">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-25">
+                            <h2>Tentang kami</h2>
+                        </div>
+                        <p class="mb-20">
+                        Key's Laundry adalah layanan laundry yang didedikasikan untuk memberikan pengalaman laundry yang cepat, bersih, dan handal. Kami memiliki tim profesional yang terlatih dengan baik dan menggunakan peralatan canggih untuk memastikan pakaian Anda dicuci dan dirawat dengan baik. 
+                        </p>
+                        <!-- <p class="mb-30">The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p> -->
+                        <!-- <a href="about.html" class="btn">About Us</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Area End -->
+    <!--?  Map Area start  -->
+    <!-- <div class="Map-area">
+        <img src="{{ asset('/img/gallery/Map.png' )}}" alt="" class="w-100">
+    </div> -->
+    <!-- Map Area End -->
 @endsection
 
