@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+<<<<<<< HEAD
 use App\Models\DaftarHarga;
 use App\Models\Kontak;
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 
 class ForgotPasswordController extends Controller
 {
@@ -21,6 +24,7 @@ class ForgotPasswordController extends Controller
     */
 
     use SendsPasswordResetEmails;
+<<<<<<< HEAD
 
     public function showLinkRequestForm()
     {
@@ -29,4 +33,6 @@ class ForgotPasswordController extends Controller
 
         return view('auth.passwords.email', compact('uniques', 'kontaks'));
     }
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 }

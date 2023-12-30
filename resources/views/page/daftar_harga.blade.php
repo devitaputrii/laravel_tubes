@@ -20,6 +20,7 @@
     <!--? Services Area Start -->
     <section class="services-area mb-40">
         <div class="container border-bottom pb-20">
+<<<<<<< HEAD
             <div class="row justify-content-center pt-50 pb-10">
                 <div class="col-xl-7 col-lg-8">
                     <div class="section-tittle text-center">
@@ -60,11 +61,14 @@
                     </div>
                 </div>
             </div>
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
             @forelse ($uniques as $unique)
                 <div class="row justify-content-center pt-50 pb-10">
                     <div class="col-xl-7 col-lg-8">
                         <div class="section-tittle text-center mb-30">
                             <h2>{{ $unique }}</h2>
+<<<<<<< HEAD
                             @auth
                                 @if(auth()->user()->role == 'admin')
                                     <div class="d-flex justify-content-center">
@@ -152,6 +156,8 @@
                                     </form>
                                 </div>
                             </div>
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                         </div>
                     </div>
                 </div>
@@ -166,25 +172,33 @@
                                     <div class="country" style="text-align: center;">Minimal Berat</div>
                                     <div class="country" style="text-align: center;">Estimasi</div>
                                     <div class="country" style="text-align: center;">Harga</div>
+<<<<<<< HEAD
                                     @auth
                                         @if(auth()->user()->role == 'admin')
                                             <div class="country" style="text-align: center;">Action</div>
                                         @endif
                                     @endauth
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                 </div>
                                 @forelse ($services as $index => $service)
                                     @if ($service->kelompok === $unique)
                                         <div class="table-row">
                                             <div class="serial">{{ $index + 1 }}</div>
+<<<<<<< HEAD
                                             @if (Str::contains($service->img, 'daftar_harga_images'))
                                                 <div class="country"><img src="{{ asset('storage/' . $service->img) }}" width="50" height="50"></div>
                                             @else
                                                 <div class="country"><img src="{{ $service->img }}" width="50" height="50"></div>
                                             @endif
+=======
+                                            <div class="country"><img src="{{ $service->img }}"></div>
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                             <div class="percentage">{{ $service->name}}</div>
                                             <div class="country" style="text-align: center; display: block;">{{ $service->minimal }} Kg</div>
                                             <div class="country" style="text-align: center; display: block;">{{ $service->estimasi }} Hari</div>
                                             <div class="country" style="text-align: center; display: block;">Rp. {{ $service->harga }}</div>
+<<<<<<< HEAD
                                             @auth
                                                 @if(auth()->user()->role == 'admin')
                                                     <div class="country" style="text-align: center; display: block;">
@@ -242,6 +256,8 @@
                                                     </form>
                                                 </div>
                                             </div>
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                         </div>
                                     @endif
                                 @empty

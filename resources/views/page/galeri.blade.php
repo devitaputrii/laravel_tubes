@@ -25,11 +25,15 @@
                     @forelse ($posts as $index => $post)
                         <div class="col-md-4">
                             <div class="single-defination">
+<<<<<<< HEAD
                                 @if (Str::contains($post->img, 'galeris'))
                                     <img src="{{ asset('storage/' . $post->img) }}" alt="" style="width: 100%; height: auto; height: 250px;" class="img-fluid mb-20">
                                 @else
                                     <img src="{{ $post->img }}" alt="" style="width: 100%; height: auto; height: 250px;" class="img-fluid mb-20">
                                 @endif
+=======
+                                <img src="{{ $post->img }}" alt="" style="width: 100%; height: auto; height: 250px;" class="img-fluid mb-20">
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                 <h3 class="mb-10">{{ $post->judul }}</h3>
                                 <p>{{ $post->deskripsi }}</p>
                             </div>
@@ -42,6 +46,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- Pengaturan Galeri -->
     @auth
         @if(auth()->user()->role == 'admin')
@@ -172,4 +177,6 @@
         @endif
     @endauth
 
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 @endsection

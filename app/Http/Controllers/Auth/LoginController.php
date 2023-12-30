@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+<<<<<<< HEAD
 use App\Models\DaftarHarga;
 use App\Models\Kontak;
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 
 class LoginController extends Controller
 {
@@ -39,6 +42,7 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+<<<<<<< HEAD
 
     public function showLoginForm()
     {
@@ -47,4 +51,6 @@ class LoginController extends Controller
 
         return view('auth.login', compact('uniques', 'kontaks'));
     }
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 }

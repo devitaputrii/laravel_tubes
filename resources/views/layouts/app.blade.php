@@ -44,6 +44,7 @@
                         <div class="menu-wrapper d-flex align-items-center">
                             <!-- Main-menu -->
                             <div class="main-menu d-none d-lg-block">
+<<<<<<< HEAD
                                 <nav>
                                     <ul id="navigation">                                                                                          
                                         <li class="{{ Request::is('/') || Request::is('home') ? 'active' : '' }}">
@@ -67,6 +68,15 @@
                                                 <a href="/pengaturan" class="nav-link">Pengaturan</a>
                                             </li>
                                         @endif
+=======
+                                <nav> 
+                                    <ul id="navigation">                                                                                          
+                                        <li class="active"><a href="/" class="nav-link">Home</a></li>
+                                        <li><a href="/daftar-harga" class="nav-link">Daftar Harga</a></li>
+                                        <li><a href="/keluhan" class="nav-link">Komplain</a></li>
+                                        <li><a href="/ulasan" class="nav-link">Ulasan</a></li>
+                                        <li><a href="/galeri" class="nav-link">Galeri</a></li>
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                     </ul>
                                 </nav>
                             </div>

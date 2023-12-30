@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 //import Model "Post
 use App\Models\Home;
 use App\Models\Proses;
@@ -15,6 +16,9 @@ use App\Models\DaftarHarga;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+=======
+use Illuminate\Http\Request;
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 
 class HomeController extends Controller
 {
@@ -23,16 +27,24 @@ class HomeController extends Controller
      *
      * @return void
      */
+<<<<<<< HEAD
     // public function __construct()
     // {
     //     $this->middleware('auth');
     // }
+=======
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+<<<<<<< HEAD
     public function index(): View
     {
         $homes = Home::get(); 
@@ -100,5 +112,10 @@ class HomeController extends Controller
 
         // Redirect back or to a specific page
         return redirect()->back()->with('success', 'Banner updated successfully');
+=======
+    public function index()
+    {
+        return view('home');
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
     }
 }
