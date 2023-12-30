@@ -2,42 +2,40 @@
 
 @section('content')
 
-<section class="py-5 text-center container">
-    <div class="row py-lg">
-        <div class="col-lg-12 col-md-8 mx-auto">
-            <h1 class="layanan">Galeri</h1>
-            <br>
+    <!--? Hero Start -->
+    <div class="slider-area2 section-bg2 hero-overly" data-background="{{ asset('/img/hero/hero2.png' )}}">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2">
+                            <h2>Galeri</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+    <!-- Hero End -->
 
-<div class="container">
-    <div class="card-group">
-        <div class="card">
-            <img src="/gambar/mesin cuci.jpeg" class="card-img-top" alt="Mesin Cuci">
-            <div class="card-body">
-                <h5 class="card-title">Mesin Cuci Berkualitas</h5>
-                <p class="card-text">Mesin cuci kami memiliki kualitas kapasitas yang cukup besar untuk menampung jumlah cucian yang signifikan. Hal ini memungkinkan untuk mencuci sejumlah besar pakaian sekaligus, mengurangi frekuensi mencuci.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/gambar/lokasi laundry.jpeg" class="card-img-top" alt="Lokasi Laundry">
-            <div class="card-body">
-                <h5 class="card-title">Lokasi Strategis</h5>
-                <p class="card-text">Lokasi laundry yang strategis mudah diakses oleh customer, Terletak di daerah Sukabirus dekat dengan Kampus Telkom.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="/gambar/rak penyimpanan.jpeg" class="card-img-top" alt="Tempat Penyimpanan">
-            <div class="card-body">
-                <h5 class="card-title">Tempat Penyimpanan</h5>
-                <p class="card-text">Memiliki tempat penyimpanan dengan ruangan yang bersih dan aman untuk menjaga pakaian pelanggan tetap terjaga kualitasnya. Kebersihan dan keamanan lingkungan penyimpanan sangat penting untuk memastikan bahwa pakaian tetap dalam kondisi terbaik.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <div class="whole-wrap">
+        <div class="container box_1170">
+            <div class="section-top-border">
+                <div class="row">
+                    @forelse ($posts as $index => $post)
+                        <div class="col-md-4">
+                            <div class="single-defination">
+                                <img src="{{ $post->img }}" alt="" style="width: 100%; height: auto; height: 250px;" class="img-fluid mb-20">
+                                <h3 class="mb-10">{{ $post->judul }}</h3>
+                                <p>{{ $post->deskripsi }}</p>
+                            </div>
+                        </div>
+                    @empty
+                        <p>No posts available.</p>
+                    @endforelse
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 @endsection
