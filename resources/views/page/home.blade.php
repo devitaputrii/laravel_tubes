@@ -219,7 +219,7 @@
     <!-- Testimonials_end -->
     
     <!--? Company achievement Start -->
-    <!-- <section class="services-area section-padding40 fix">
+   <section class="services-area section-padding40 fix">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
@@ -285,8 +285,8 @@
                         <p class="mb-20">
                         Key's Laundry adalah layanan laundry yang didedikasikan untuk memberikan pengalaman laundry yang cepat, bersih, dan handal. Kami memiliki tim profesional yang terlatih dengan baik dan menggunakan peralatan canggih untuk memastikan pakaian Anda dicuci dan dirawat dengan baik. 
                         </p>
-                        <!-- <p class="mb-30">The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p> -->
-                        <!-- <a href="about.html" class="btn">About Us</a> -->
+                        <p class="mb-30">The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p> 
+                        <a href="about.html" class="btn">About Us</a> 
                     </div>
                 </div>
             </div>
