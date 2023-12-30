@@ -20,11 +20,144 @@
     <!--? Services Area Start -->
     <section class="services-area mb-40">
         <div class="container border-bottom pb-20">
+<<<<<<< HEAD
+            <div class="row justify-content-center pt-50 pb-10">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center">
+                        @auth
+                            @if(auth()->user()->role == 'admin')
+                                <button type="button" class="genric-btn info circle arrow small mr-2" data-toggle="modal" data-target="#tambahModalKelompok">Tambah Kelompok</button>
+                            @endif
+                        @endauth
+                    </div>
+
+                    <!-- Modal Tambah Kelompok -->
+                    <div class="modal fade" id="tambahModalKelompok" tabindex="-1" role="dialog" aria-labelledby="tambahModalKelompokLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h2 class="modal-title" id="tambahModalKelompokLabel">Tambah Kelompok</h2>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <!-- Add your form fields here for editing user details -->
+                                <form id="editForm" enctype="multipart/form-data" action="{{ route('tambah-kelompok-daftar-harga') }}" method="post">
+                                    <div class="modal-body">
+                                            @csrf <!-- Laravel CSRF token -->
+                                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                <h3 class="mb-10">Kelompok</h3>
+                                                <input type="text" id="Judul" name="Judul" placeholder="Nama Kelompok" class="single-input" required>
+                                            </div>
+                                            <!-- Add other form fields as needed -->
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="genric-btn primary circle arrow small" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="genric-btn primary circle arrow small">Simpan</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
             @forelse ($uniques as $unique)
                 <div class="row justify-content-center pt-50 pb-10">
                     <div class="col-xl-7 col-lg-8">
                         <div class="section-tittle text-center mb-30">
                             <h2>{{ $unique }}</h2>
+<<<<<<< HEAD
+                            @auth
+                                @if(auth()->user()->role == 'admin')
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="genric-btn primary circle arrow small mr-2" data-toggle="modal" data-target="#tambahModalDaftarHarga{{ str_replace(' ', '_', $unique) }}">Tambah Layanan</button>
+                                        <button type="button" class="genric-btn info circle arrow small mr-2" data-toggle="modal" data-target="#editModalKelompok{{ str_replace(' ', '_', $unique) }}">Edit Kelompok</button>
+                                        <form action="{{ route('soft-delete-daftar-harga-kelompok', ['kelompok' => $unique]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="genric-btn danger circle arrow small" onclick="return confirm('Apakah kamu yakin mau menghapus kelompok ini?')">Delete</button>
+                                        </form>
+                                    </div>
+                                @endif
+                            @endauth
+                        </div>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="tambahModalDaftarHarga{{ str_replace(' ', '_', $unique) }}" tabindex="-1" role="dialog" aria-labelledby="tambahModalDaftarHargaLabel{{ str_replace(' ', '_', $unique) }}" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title" id="tambahModalDaftarHargaLabel{{ str_replace(' ', '_', $unique) }}">Tambah Daftar Layanan</h2>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <!-- Add your form fields here for editing user details -->
+                                    <form id="editForm" enctype="multipart/form-data" action="{{ route('tambah-daftar-harga', ['kelompok' => $unique]) }}" method="post">
+                                        <div class="modal-body">
+                                                @csrf <!-- Laravel CSRF token -->
+                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                    <h3 class="mb-10">Gambar</h3>
+                                                    <input type="file" class="form-control-file" id="editFoto" name="editFoto">
+                                                </div>
+                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                    <h3 class="mb-10">Nama</h3>
+                                                    <input type="text" id="editNama" name="editNama" placeholder="Nama Daftar" class="single-input" required>
+                                                </div>
+                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                    <h3 class="mb-10">Minimal (Kg)</h3>
+                                                    <input type="number" id="editMinimal" name="editMinimal" placeholder="Minimal Berat" class="single-input" required>
+                                                </div>
+                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                    <h3 class="mb-10">Estimasi (Hari)</h3>
+                                                    <input type="number" id="editEstimasi" name="editEstimasi" placeholder="Estimasi Pengerjaan" class="single-input" required>
+                                                </div>
+                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                    <h3 class="mb-10">Harga (Rupiah)</h3>
+                                                    <input type="number" id="editHarga" name="editHarga" placeholder="Harga" class="single-input" required>
+                                                </div>
+                                                <!-- Add other form fields as needed -->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="genric-btn primary circle arrow small" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="genric-btn primary circle arrow small">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal Edit Kelompok -->
+                        <div class="modal fade" id="editModalKelompok{{ str_replace(' ', '_', $unique) }}" tabindex="-1" role="dialog" aria-labelledby="editModalKelompokLabel{{ str_replace(' ', '_', $unique) }}" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h2 class="modal-title" id="editModalKelompokLabel{{ str_replace(' ', '_', $unique) }}">Edit Kelompok</h2>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <!-- Add your form fields here for editing user details -->
+                                    <form id="editForm" enctype="multipart/form-data" action="{{ route('update-kelompok-daftar-harga', ['kelompok' => $unique]) }}" method="post">
+                                        <div class="modal-body">
+                                            @csrf <!-- Laravel CSRF token -->
+                                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                <h3 class="mb-10">Kelompok</h3>
+                                                <input type="text" id="Kelompok" name="Kelompok" placeholder="Nama Kelompok" class="single-input" value="{{ $unique }}" required>
+                                            </div>
+                                            <!-- Add other form fields as needed -->
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="genric-btn primary circle arrow small" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="genric-btn primary circle arrow small">Simpan</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                         </div>
                     </div>
                 </div>
@@ -39,16 +172,92 @@
                                     <div class="country" style="text-align: center;">Minimal Berat</div>
                                     <div class="country" style="text-align: center;">Estimasi</div>
                                     <div class="country" style="text-align: center;">Harga</div>
+<<<<<<< HEAD
+                                    @auth
+                                        @if(auth()->user()->role == 'admin')
+                                            <div class="country" style="text-align: center;">Action</div>
+                                        @endif
+                                    @endauth
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                 </div>
                                 @forelse ($services as $index => $service)
                                     @if ($service->kelompok === $unique)
                                         <div class="table-row">
                                             <div class="serial">{{ $index + 1 }}</div>
+<<<<<<< HEAD
+                                            @if (Str::contains($service->img, 'daftar_harga_images'))
+                                                <div class="country"><img src="{{ asset('storage/' . $service->img) }}" width="50" height="50"></div>
+                                            @else
+                                                <div class="country"><img src="{{ $service->img }}" width="50" height="50"></div>
+                                            @endif
+=======
                                             <div class="country"><img src="{{ $service->img }}"></div>
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                             <div class="percentage">{{ $service->name}}</div>
                                             <div class="country" style="text-align: center; display: block;">{{ $service->minimal }} Kg</div>
                                             <div class="country" style="text-align: center; display: block;">{{ $service->estimasi }} Hari</div>
                                             <div class="country" style="text-align: center; display: block;">Rp. {{ $service->harga }}</div>
+<<<<<<< HEAD
+                                            @auth
+                                                @if(auth()->user()->role == 'admin')
+                                                    <div class="country" style="text-align: center; display: block;">
+                                                        <button type="button" class="genric-btn info circle arrow small mr-2" data-toggle="modal" data-target="#editModalDaftarHarga{{ $service->id }}">Edit</button>
+                                                        <form action="{{ route('soft-delete-daftar-harga', ['id' => $service->id]) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="genric-btn danger circle arrow small" onclick="return confirm('Apakah kamu yakin mau menghapus daftar ini?')">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                @endif
+                                            @endauth
+                                        </div>
+
+                                         <!-- Modal -->
+                                         <div class="modal fade" id="editModalDaftarHarga{{ $service->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalDaftarLabel{{ $service->id }}" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h2 class="modal-title" id="editModalDaftarLabel{{ $service->id }}">Edit Daftar Harga</h2>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <!-- Add your form fields here for editing user details -->
+                                                    <form id="editForm" enctype="multipart/form-data" action="{{ route('update-daftar-harga', ['id' => $service->id]) }}" method="post">
+                                                        <div class="modal-body">
+                                                                @csrf <!-- Laravel CSRF token -->
+                                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                    <h3 class="mb-10">Gambar</h3>
+                                                                    <input type="file" class="form-control-file" id="editFoto" name="editFoto">
+                                                                </div>
+                                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                    <h3 class="mb-10">Nama</h3>
+                                                                    <input type="text" id="editNama" name="editNama" placeholder="Nama Daftar" class="single-input" value="{{ $service->name }}" required>
+                                                                </div>
+                                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                    <h3 class="mb-10">Minimal (Kg)</h3>
+                                                                    <input type="number" id="editMinimal" name="editMinimal" placeholder="Minimal Berat" class="single-input" value="{{ $service->minimal }}" required>
+                                                                </div>
+                                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                    <h3 class="mb-10">Estimasi (Hari)</h3>
+                                                                    <input type="number" id="editEstimasi" name="editEstimasi" placeholder="Estimasi Pengerjaan" class="single-input" value="{{ $service->estimasi }}" required>
+                                                                </div>
+                                                                <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                    <h3 class="mb-10">Harga (Rupiah)</h3>
+                                                                    <input type="number" id="editHarga" name="editHarga" placeholder="Harga" class="single-input" value="{{ $service->harga }}" required>
+                                                                </div>
+                                                                <!-- Add other form fields as needed -->
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="genric-btn primary circle arrow small" data-dismiss="modal">Close</button>
+                                                            <button type="submit" class="genric-btn primary circle arrow small">Simpan</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+=======
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                         </div>
                                     @endif
                                 @empty

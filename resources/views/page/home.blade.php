@@ -2,6 +2,95 @@
 
 @section('content')
     <!--? slider Area Start-->
+<<<<<<< HEAD
+    
+    @forelse ($homes as $index => $home)
+        <section class="slider-area hero-overly" style="margin-top: -1px; background-image: url({{ $home->img_banner }}); background-repeat: no-repeat; background-position: top center;">
+    @empty
+        <section class="slider-area hero-overly">
+    @endforelse
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-9">
+                            <div class="hero__caption">
+                                @forelse ($homes as $index => $home)
+                                    <h1 data-animation="fadeInLeft" data-delay="0.2s">{{ $home->judul }}</h1>
+                                    <p data-animation="fadeInLeft" data-delay="0.4s">{{ $home->deskirpsi }}</p>
+                                @empty
+                                    <p>No posts available.</p>
+                                @endforelse
+                                <a href="/daftar-harga" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Layanan Kami</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
+            </div>
+        </div>
+    </section>
+    <!-- slider Area End-->
+
+    <!--? Services Area Start -->
+    <section class="services-area pt-top pb-20 mb-60">
+        <div class="container border-bottom ">
+            <div class="row justify-content-center ">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        @forelse ($prosess as $index => $proses)
+                            <span class="element">{{ $proses->tema }}</span>
+                            <h2>{{ $proses->sub_tema }}</h2>
+                            @break
+                        @empty
+                            <p>No posts available.</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @forelse ($prosess as $index => $proses)
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-cat text-center">
+                            <div class="cat-icon">
+                                @if (Str::contains($proses->icon, 'proses'))
+                                    <img src="{{ asset('storage/' . $proses->icon) }}" alt="">
+                                @else
+                                    <img src="{{ asset($proses->icon) }}" alt="">
+                                @endif
+                                
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="/layanan">{{ $proses->judul }}</a></h5>
+                                <p>{{ $proses->deskripsi }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <p>No posts available.</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
+    <!-- Services End -->
+    
+    <!--? Offer-services Start  -->
+    <section class="offer-services pb-bottom2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        @forelse ($layanans as $index => $layanan)
+                            <span class="element">{{ $layanan->tema }}</span>
+                            <h2>{{ $layanan->sub_tema }}</h2>
+                            @break
+                        @empty
+                            <p>No posts available.</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+=======
     <section class="slider-area hero-overly">
         <div class="slider-active">
             <!-- Single Slider -->
@@ -88,15 +177,33 @@
                     </div>
                 </div>
             </div>
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
             <div class="row no-gutters">
                 @forelse ($layanans as $index => $layanan)
                     <div class="col-lg-6 col-md-6">
                         <div class="single-offers">
+<<<<<<< HEAD
+                            @if (Str::contains($layanan->img1, 'layanan'))
+                                <img src="{{ asset('storage/' . $layanan->img1) }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @else
+                                <img src="{{ $layanan->img1 }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @endif
+                            
+                            @if($index % 2 != 0)
+                                <div class="offers-caption text-center">
+                                    <div class="cat-icon">
+                                        @if (Str::contains($layanan->img_icon, 'layanan'))
+                                            <img src="{{ asset('storage/' . $layanan->img_icon) }}" alt="">
+                                        @else
+                                            <img src="{{ $layanan->img_icon }}" alt="">
+                                        @endif
+=======
                             <img src="{{ $layanan->img1 }}" alt="" class=" w-100">
                             @if($index % 2 != 0)
                                 <div class="offers-caption text-center">
                                     <div class="cat-icon">
                                         <img src="{{ $layanan->img_icon }}" alt="">
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                     </div>
                                     <div class="cat-cap">
                                         <h5><a href="#">{{ $layanan->judul }}</a></h5>
@@ -108,11 +215,27 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="single-offers">
+<<<<<<< HEAD
+                            @if (Str::contains($layanan->img2, 'layanan'))
+                                <img src="{{ asset('storage/' . $layanan->img2) }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @else
+                                <img src="{{ $layanan->img2 }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @endif
+                            @if($index % 2 == 0)
+                                <div class="offers-caption text-center">
+                                    <div class="cat-icon">
+                                        @if (Str::contains($layanan->img_icon, 'layanan'))
+                                            <img src="{{ asset('storage/' . $layanan->img_icon) }}" alt="">
+                                        @else
+                                            <img src="{{ $layanan->img_icon }}" alt="">
+                                        @endif
+=======
                             <img src="{{ $layanan->img2 }}" alt="" class=" w-100">
                             @if($index % 2 == 0)
                                 <div class="offers-caption text-center">
                                     <div class="cat-icon">
                                         <img src="{{ $layanan->img_icon }}" alt="">
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                     </div>
                                     <div class="cat-cap">
                                         <h5><a href="#">{{ $layanan->judul }}</a></h5>
@@ -137,6 +260,18 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-xl-8 col-lg-9 col-md-7">
                         <div class="wantToWork-caption wantToWork-caption2">
+<<<<<<< HEAD
+                            @foreach($kontaks as $kontak)
+                                <h2>{{ $kontak->judul }}</h2>
+                                <p>{{ $kontak->deskripsi }}</p>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5">
+                        <a href="#" class="btn wantToWork-btn">
+                            <img src="{{ asset('/img/icon/call2.png') }}" alt=""> Hubungi Kami
+                        </a>
+=======
                         @foreach($kontaks as $kontak)
                             <h2>{{ $kontak->judul }}</h2>
                             <p>{{ $kontak->deskripsi }}</p>
@@ -145,6 +280,7 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-5">
                         <a href="#" class="btn wantToWork-btn"><img src="{{ asset('/img/icon/call2.png' )}}" alt=""> Hubungi Kami</a>
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                     </div>
                 </div>
             </div>
@@ -160,6 +296,37 @@
                     <div class="col-xl-12 ">
                         <!-- testmonial-image -->
                         <div class="testmonial-nav text-center">
+<<<<<<< HEAD
+                            @forelse ($ulasans as $index => $ulasan)
+                                <div class="testmonial-thumb">
+                                    @if (Str::contains($ulasan->user->img, 'foto_user'))
+                                        <img src="{{ asset('storage/' . $ulasan->user->img) }}" alt="">
+                                    @else
+                                        <img src="{{ asset($ulasan->user->img) }}" alt="">
+                                    @endif
+                                </div>
+                            @empty
+                                <p>No posts available.</p>
+                            @endforelse
+                        </div>
+                        <div class="testmonial-item-active text-center">
+                            <!-- testimonial-single-items -->
+                            @forelse ($ulasans as $index => $ulasan)
+                                <div class="testmonial-item ">
+                                    <p class="pera">{{$ulasan->ulasan}}</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <p>{{$ulasan->user->name}}</p>
+                                </div>
+                            @empty
+                                <p>No posts available.</p>
+                            @endforelse
+=======
                             <div class="testmonial-thumb">
                                 <img src="{{ asset('/img/gallery/testimonila1.png' )}}" alt="">
                             </div>
@@ -210,6 +377,7 @@
                                 </div>
                                 <p> - Rupaya</p>
                             </div>
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                         </div>
                     </div>
                 </div>
@@ -219,7 +387,11 @@
     <!-- Testimonials_end -->
     
     <!--? Company achievement Start -->
+<<<<<<< HEAD
+    <!-- <section class="services-area section-padding40 fix">
+=======
    <section class="services-area section-padding40 fix">
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
@@ -270,6 +442,32 @@
     <section class="about-area2 mt-30">
         <div class="container">
             <div class="row align-items-center">
+<<<<<<< HEAD
+                @foreach($tentang_kamis as $tentang_kami)
+                    <div class="col-lg-6 col-md-12">
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            
+                            @if (Str::contains($tentang_kami->img, 'tentang'))
+                                <img src="{{ asset('storage/' . $tentang_kami->img) }}" alt="">
+                            @else
+                            <img src="{{ asset($tentang_kami->img)}}" alt="">
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="about-caption mb-50">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle mb-25">
+                                <h2>{{ $tentang_kami->judul }}</h2>
+                            </div>
+                            <p class="mb-20">
+                                {{ $tentang_kami->deskripsi }}
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+=======
                 <div class="col-lg-6 col-md-12">
                     <!-- about-img -->
                     <div class="about-img ">
@@ -289,6 +487,7 @@
                         <a href="about.html" class="btn">About Us</a> 
                     </div>
                 </div>
+>>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
             </div>
         </div>
     </section>
