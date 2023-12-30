@@ -13,30 +13,64 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/home', function () {
-    return view('page.home');
-});
+Route::resource('/', HomeController::class);
+Route::redirect('/home', '/');
 
-<<<<<<< HEAD
-Route::get('/home', function () {
-    return view('page.home');
-});
+Route::resource('/galeri', GaleriController::class);
+Route::resource('/komplain', KomplainController::class);
+Route::resource('/daftar-harga', DaftarHargaController::class);
+Route::resource('/ulasan', UlasanController::class);
+Route::resource('/pengaturan', PengaturanController::class);
 
 
+//Tambah
+Route::post('/tambah-proses', 'ProsesController@store')->name('tambah-proses');
+Route::post('/tambah-layanan', 'LayananController@store')->name('tambah-layanan');
+Route::post('/tambah-galeri', 'GaleriController@store')->name('tambah-galeri');
+Route::post('/tambah-kelompok-daftar-harga', 'DaftarHargaController@storeKelompok')->name('tambah-kelompok-daftar-harga');
+Route::post('/tambah-daftar-harga/{kelompok}', 'DaftarHargaController@store')->name('tambah-daftar-harga');
+Route::post('/tambah-ulasan', 'UlasanController@store')->name('tambah-ulasan');
+Route::post('/tambah-komplain', 'KomplainController@store')->name('tambah-komplain');
 
-=======
->>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4
-Route::get('/galeri', function () {
-    return view('page.galeri');
-});
+//Update
+Route::post('/update-user/{id}', 'UserController@update')->name('update-user');
+Route::post('/update-banner/{id}', 'HomeController@update')->name('update-banner');
+Route::post('/update-proses/{id}', 'ProsesController@update')->name('update-proses');
+Route::post('/update-proses-tema', 'ProsesController@updateTema')->name('update-proses-tema');
+Route::post('/update-layanan/{id}', 'LayananController@update')->name('update-layanan');
+Route::post('/update-layanan-tema', 'LayananController@updateTema')->name('update-layanan-tema');
+Route::post('/update-kontak/{id}', 'KontakController@update')->name('update-kontak');
+Route::post('/update-tentang/{id}', 'TentangKamiController@update')->name('update-tentang');
+Route::post('/update-galeri/{id}', 'GaleriController@update')->name('update-galeri');
+Route::post('/update-kelompok-daftar-harga/{kelompok}', 'DaftarHargaController@updateKelompok')->name('update-kelompok-daftar-harga');
+Route::post('/update-daftar-harga/{id}', 'DaftarHargaController@update')->name('update-daftar-harga');
 
-Route::get('/keluhan', function () {
-    return view('page.keluhan');
-<<<<<<< HEAD
-});
+//Delete
+Route::delete('/soft-delete-user/{id}', 'UserController@softDelete')->name('soft-delete-user');
+Route::delete('/soft-delete-proses/{id}', 'ProsesController@softDelete')->name('soft-delete-proses');
+Route::delete('/soft-delete-layanan/{id}', 'LayananController@softDelete')->name('soft-delete-layanan');
+Route::delete('/soft-delete-galeri/{id}', 'GaleriController@softDelete')->name('soft-delete-galeri');
+Route::delete('/soft-delete-daftar-harga/{id}', 'DaftarHargaController@softDelete')->name('soft-delete-daftar-harga');
+Route::delete('/soft-delete-daftar-harga-kelompok/{kelompok}', 'DaftarHargaController@softDeleteKelompok')->name('soft-delete-daftar-harga-kelompok');
 
-Route::get('/login', function () {
-    return view('page.login');
-=======
->>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4
-});
+
+//Delete
+
+
+// Auth::routes();
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

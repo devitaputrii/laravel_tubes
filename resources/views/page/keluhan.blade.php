@@ -1,83 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"  href="{{url('front/css/style.css')}}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+@extends('layouts.app')
 
-    <title>Komplain</title>
-</head>
-<body>
-    
-@include('page.navbar')
+@section('content')
 
-
-<section class="py-5 text-center container">
-            <div class="row py-lg">
-              <div class="col-lg-50 col-md-8 mx-auto">
-                <h1 class="layanan">Form Keluhan</h1>
-                <br>
-</section>
-<div class="container">
-  <div class="row mx-0 justify-content-center">
-    <div class="col-md-9 col-lg-7 col-xl-6 px-xl-0 px-xxl-3">
-      <form
-        method="POST"
-        class="w-100 rounded-1 p-4 border bg-white"
-        enctype="multipart/form-data"
-      >
-        <label class="d-block mb-4">
-          <span class="form-label d-block">Nama</span>
-          <input
-            name="name"
-            type="text"
-            class="form-control"
-            placeholder="nama kamu"
-          />
-        </label>
-
-        <label class="d-block mb-4">
-          <span class="form-label d-block">Email</span>
-          <input
-            name="email"
-            type="email"
-            class="form-control"
-            placeholder="tripoli@example.com"
-          />
-        </label>
-
-        <label class="d-block mb-4">
-          <span class="form-label d-block">Nota Pesanan</span>
-          <input name="receipt" type="file" class="form-control" />
-        </label>
-
-        <label class="d-block mb-4">
-          <span class="form-label d-block">Deskripsi</span>
-          <textarea
-            name="message"
-            class="form-control"
-            rows="3"
-            placeholder="Tulis keluhanmu disini"
-          ></textarea>
-        </label>
-
-        <div class="mb-3">
-          <button type="submit" class="btn btn-primary px-3 rounded-3">
-            Submit
-          </button>
+    <!--? Hero Start -->
+    <div class="slider-area2 section-bg2 hero-overly" data-background="{{ asset('/img/hero/hero2.png' )}}">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="hero-cap hero-cap2">
+                            <h2>Komplain</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </form>
     </div>
-  </div>
-</div>
+    <!-- Hero End -->
 
-
-@include('page.footer')
-</body>
-<<<<<<< HEAD
-</html>
-=======
-</html>
-
->>>>>>> 4614f932f65ef1a879fb9d4bcd8822c785e225d4
+    <!-- Form Start -->
+    @auth
+        @if(auth()->user()->role === 'admin')
+            <div class="section-top-border">
+                <div class="col-lg-12 col-md-12">
+                    <div class="whole-wrap">
+                        <div class="container box_1170">
+                            <div class="progress-table-wrap">
+                                <div class="progress-table">
+                                    <div class="table-head">
+                                        <div class="serial">#</div>
+                                        <div class="country">Nama User</div>
+                                        <div class="country">Email</div>
+                                        <div class="percentage" >Keluhan</div>
+                                        <div class="percentage">Nota</div>
+                                    </div>
+                                    @forelse ($komplains as $index => $komplain)
+                                        <div class="table-row">
+                                            <div class="serial">{{ $index + 1 }}</div>
+                                            <div class="country">{{ $komplain->nama}}</div>
+                                            <div class="country" >{{ $komplain->email }}</div>
+                                            <div class="percentage" >{{ $komplain->deskripsi }}</div>
+                                            @if (Str::contains($komplain->img_nota, 'nota_pesanans'))
+                                                <div class="percentage" ><img src="{{ asset('storage/' . $komplain->img_nota) }}" alt="User Photo" width="200" height="200"></div>
+                                            @else
+                                                <div class="percentage" ><img src="{{ $komplain->img_nota }}" alt="User Photo"  width="200" height="200"></div>
+                                            @endif
+                                        </div>
+                                    @empty
+                                        <p>No services available.</p>
+                                    @endforelse
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @else
+            <div class="whole-wrap">
+                <div class="container">
+                    <div class="section-top-border">
+                        <div class="row mx-0 justify-content-center">
+                            <div class="col-lg-8 col-md-8">
+                                <form action="{{ route('tambah-komplain') }}" method="post" enctype="multipart/form-data" class="w-100 rounded-1 p-4 border bg-white">
+                                    @csrf
+                                    <div class="mt-20">
+                                        <h3 class="mb-10">Nama</h3>
+                                        <input type="text" name="Nama" id="Nama" placeholder="Nama Kamu"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Kamu'" required
+                                        class="single-input">
+                                    </div>
+                                    <div class="mt-20">
+                                        <h3 class="mb-10">Email</h3>
+                                        <input type="email"  name="Email" id="Email" placeholder="Email Kamu"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Kamu'" required
+                                        class="single-input">
+                                    </div>    
+                                    <div class="mt-20">
+                                        <h3 class="mb-10">Nota Pesanan</h3>
+                                        <input type="file"  name="Nota" id="Nota" placeholder="Nota Pesanan"
+                                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nota Pesanan'" required
+                                        class="single-input">
+                                    </div>                               
+                                    <div class="mt-20">
+                                        <h3 class="mb-10">Keluhan</h3>
+                                        <textarea class="single-textarea"  name="Keluhan" id="Keluhan" placeholder="Pesan Keluhan" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Pesan Keluhan'" required></textarea>
+                                    </div>
+                                    <div class="mt-30">
+                                        <button type="submit" class="genric-btn primary circle">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endif
+    @else
+        <div class="whole-wrap">
+            <div class="container">
+                <div class="section-top-border">
+                    <div class="row mx-0 justify-content-center">
+                        <div class="col-lg-8 col-md-8">
+                            <form action="{{ route('tambah-komplain') }}" method="post" enctype="multipart/form-data" class="w-100 rounded-1 p-4 border bg-white">
+                                @csrf
+                                <div class="mt-20">
+                                    <h3 class="mb-10">Nama</h3>
+                                    <input type="text" name="Nama" id="Nama" placeholder="Nama Kamu"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Kamu'" required
+                                    class="single-input">
+                                </div>
+                                <div class="mt-20">
+                                    <h3 class="mb-10">Email</h3>
+                                    <input type="email"  name="Email" id="Email" placeholder="Email Kamu"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Kamu'" required
+                                    class="single-input">
+                                </div>    
+                                <div class="mt-20">
+                                    <h3 class="mb-10">Nota Pesanan</h3>
+                                    <input type="file"  name="Nota" id="Nota" placeholder="Nota Pesanan"
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nota Pesanan'" required
+                                    class="single-input">
+                                </div>                               
+                                <div class="mt-20">
+                                    <h3 class="mb-10">Keluhan</h3>
+                                    <textarea class="single-textarea"  name="Keluhan" id="Keluhan" placeholder="Pesan Keluhan" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Pesan Keluhan'" required></textarea>
+                                </div>
+                                <div class="mt-30">
+                                    <button type="submit" class="genric-btn primary circle">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endauth
+    <!-- Form End -->
+@endsection
