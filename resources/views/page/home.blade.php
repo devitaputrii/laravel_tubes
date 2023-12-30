@@ -41,7 +41,7 @@
                         </div>
                         <div class="cat-cap">
                             <h5><a href="/layanan">Proses Pengerjaan Kilat</a></h5>
-                            <p>KEY’S Laundry Telkom University memiliki salah satu keunggulan, yaitu proses pengerjaan KILAT terhadap laundry pelanggan</p>
+                            <p>key’S Laundry Telkom University memiliki salah satu keunggulan, yaitu proses pengerjaan KILAT terhadap laundry pelanggan</p>
                         </div>
                     </div>
                 </div>
