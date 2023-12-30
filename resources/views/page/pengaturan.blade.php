@@ -110,11 +110,7 @@
         </div>
     </section>    
 
-<<<<<<< HEAD
     <!-- Banner -->
-=======
-    {{-- <!-- Banner -->
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
     <section class="services-area mb-40">
         <div class="container border-bottom pb-20">
             <div class="row justify-content-center pt-50 pb-10">
@@ -195,11 +191,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </section>   
-=======
-    </section>    --}}
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 
     <!-- Proses -->
     <section class="services-area mb-40">
@@ -388,11 +380,7 @@
     </section>   
 
     <!-- Layanan -->
-<<<<<<< HEAD
     <section class="services-area mb-40">
-=======
-    {{-- <section class="services-area mb-40">
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
         <div class="container border-bottom pb-20">
             <div class="row justify-content-center pt-50 pb-10">
                 <div class="col-xl-7 col-lg-8">
@@ -603,17 +591,10 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </section>  
 
     <!-- Kontak -->
     <section class="services-area mb-40">
-=======
-    </section>    --}}
-
-    <!-- Kontak -->
-    {{-- <section class="services-area mb-40">
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
         <div class="container border-bottom pb-20">
             <div class="row justify-content-center pt-50 pb-10">
                 <div class="col-xl-7 col-lg-8">
@@ -694,11 +675,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </section>  
-=======
-    </section>   --}}
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 
     <!-- Tentang Kami -->
     <section class="services-area mb-40">

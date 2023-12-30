@@ -63,11 +63,7 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-<<<<<<< HEAD
                                 <button type="submit" class="genric-btn primary circle">
-=======
-                                <button type="submit" class="btn btn-primary">
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                     {{ __('Register') }}
                                 </button>
                             </div>

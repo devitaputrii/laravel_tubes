@@ -1,6 +1,6 @@
 
 <!--awal FOOTER-->
-<!-- <div class="col-md-12">
+ <div class="col-md-12">
     <div class="row" style="background: rgb(255, 253, 253) 0.562;">
         <div class="container">
             <footer class="footer row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
@@ -13,7 +13,7 @@
             </footer>
         </div>
     </div>
-</div> -->
+</div> 
 
 <footer>
     <!-- Footer Start-->
@@ -25,19 +25,11 @@
                         <div class="single-footer-caption mb-30">
                             <!-- logo -->
                             <div class="footer-logo mb-35">
-<<<<<<< HEAD
                                 <a href="#"><img src="{{ asset('/gambar/logo laundry.png')}}" alt=""></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
                                     <p>Kami memahami betapa berharganya waktu Anda, dan itulah mengapa kami hadir untuk membuat hidup Anda lebih mudah dengan layanan laundry berkualitas tinggi.</p>
-=======
-                                <a href="index.html"><img src="{{ asset('/gambar/logo laundry.png')}}" alt=""></a>
-                            </div>
-                            <div class="footer-tittle">
-                                <div class="footer-pera">
-                                    <p>Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                 </div>
                             </div>
                             <!-- social -->
@@ -54,19 +46,11 @@
                         <div class="footer-tittle">
                             <h4>Layanan</h4>
                             <ul>
-<<<<<<< HEAD
                                 @forelse ($uniques as $unique)
                                     <li><a href="#">- {{ $unique }}</a></li>
                                 @empty
                                     <p>No services available.</p>
                                 @endforelse
-=======
-                                <li><a href="#">- Dry Cleaning</a></li>
-                                <li><a href="#">- Dry Clean</a></li>
-                                <li><a href="#">- Ironing Services</a></li>
-                                <li><a href="#">- Laundry Service London</a></li>
-                                <li><a href="#">- Laundry App</a></li>
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                             </ul>
                         </div>
                     </div>
@@ -76,7 +60,6 @@
                         <div class="footer-tittle">
                             <h4>Hubungi Kami</h4>
                             <ul>
-<<<<<<< HEAD
                                 @forelse ($kontaks as $kontak)
                                 <li class="number"><a href="#">{{ $kontak->no_hp }}</a></li>
                                 <!-- <li><a href="#">laundry@567.com</a></li> -->
@@ -84,11 +67,6 @@
                                 @empty
                                     <p>No services available.</p>
                                 @endforelse
-=======
-                                <li class="number"><a href="#">0895-2580-602</a></li>
-                                <!-- <li><a href="#">laundry@567.com</a></li> -->
-                                <li><a href="#">Jl. Sukabirus No.101, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat 40257</a></li>
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                             </ul>
                         </div>
                     </div>
@@ -126,10 +104,6 @@
 <script src="{{ asset('/js/vendor/jquery-1.12.4.min.js') }}"></script>
 <script src="{{ asset('/js/popper.min.js') }}"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-<<<<<<< HEAD
-
-=======
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 <!-- Jquery Mobile Menu -->
 <script src="{{ asset('/js/jquery.slicknav.min.js') }}"></script>
 
