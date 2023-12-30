@@ -23,9 +23,9 @@
     <!-- slider Area End-->
 
     <!--? Services Area Start -->
-    <section class="services-area pt-top border-bottom pb-20 mb-60">
-        <div class="container">
-            <div class="row justify-content-center">
+    <section class="services-area pt-top pb-20 mb-60">
+        <div class="container border-bottom ">
+            <div class="row justify-content-center ">
                 <div class="col-xl-7 col-lg-8">
                     <div class="section-tittle text-center mb-55">
                         <span class="element">Proses kami</span>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="cat-cap">
                             <h5><a href="/layanan">Proses Pengerjaan Kilat</a></h5>
-                            <p>key’S Laundry Telkom University memiliki salah satu keunggulan, yaitu proses pengerjaan KILAT terhadap laundry pelanggan</p>
+                            <p>KEY’S Laundry Telkom University memiliki salah satu keunggulan, yaitu proses pengerjaan KILAT terhadap laundry pelanggan</p>
                         </div>
                     </div>
                 </div>
@@ -78,50 +78,53 @@
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
                     <div class="section-tittle text-center mb-55">
-                        <span class="element">Layanan</span>
-                        <h2>Layanan yang kami tawarkan</h2>
+                        @forelse ($layanans as $index => $layanan)
+                            <span class="element">{{ $layanan->tema }}</span>
+                            <h2>{{ $layanan->sub_tema }}</h2>
+                            @break
+                        @empty
+                            <p>No posts available.</p>
+                        @endforelse
                     </div>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-lg-6 col-md-6">
-                    <div class="single-offers">
-                        <img src="{{ asset('/img/gallery/offers4.png') }}" alt="" class=" w-100">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single-offers">
-                        <img src="{{ asset('/img/gallery/offers2.png' )}}" alt="" class=" w-100">
-                        <div class="offers-caption text-center">
-                            <div class="cat-icon">
-                                <img src="{{ asset('/img/icon/offers-icon1.png' )}}" alt="">
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="services.html">Laundry Reguler</a></h5>
-                                <p>Hanya dengan Rp6.000/Kg kami jamin pakaian Anda kembali bersih dan wangi!!</p>
-                            </div>
+                @forelse ($layanans as $index => $layanan)
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-offers">
+                            <img src="{{ $layanan->img1 }}" alt="" class=" w-100">
+                            @if($index % 2 != 0)
+                                <div class="offers-caption text-center">
+                                    <div class="cat-icon">
+                                        <img src="{{ $layanan->img_icon }}" alt="">
+                                    </div>
+                                    <div class="cat-cap">
+                                        <h5><a href="#">{{ $layanan->judul }}</a></h5>
+                                        <p>{{ $layanan->deskripsi }}</p>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single-offers">
-                        <img src="{{ asset('/img/gallery/offers2.png') }}" alt="" class=" w-100">
-                        <div class="offers-caption text-center">
-                            <div class="cat-icon">
-                                <img src="{{ asset('/img/icon/offers-icon1.png') }}" alt="">
-                            </div>
-                            <div class="cat-cap">
-                                <h5><a href="services.html">Laundry Kilat</a></h5>
-                                <p>5 jam kami jamin sudah sampai ditangan Anda, mulai dari Rp10.000/Kg!!</p>
-                            </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-offers">
+                            <img src="{{ $layanan->img2 }}" alt="" class=" w-100">
+                            @if($index % 2 == 0)
+                                <div class="offers-caption text-center">
+                                    <div class="cat-icon">
+                                        <img src="{{ $layanan->img_icon }}" alt="">
+                                    </div>
+                                    <div class="cat-cap">
+                                        <h5><a href="#">{{ $layanan->judul }}</a></h5>
+                                        <p>{{ $layanan->deskripsi }}</p>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="single-offers">
-                        <img src="{{ asset('/img/gallery/offers1.png' )}}" alt="" class=" w-100">
-                    </div>
-                </div>
+                @empty
+                    <p>No posts available.</p>
+                @endforelse
             </div>
         </div>
     </section>
@@ -134,12 +137,14 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-xl-8 col-lg-9 col-md-7">
                         <div class="wantToWork-caption wantToWork-caption2">
-                            <h2>Butuh jasa kami?</h2>
-                            <p>Kami jamin pakaian Anda kembali seperti baru</p>
+                        @foreach($kontaks as $kontak)
+                            <h2>{{ $kontak->judul }}</h2>
+                            <p>{{ $kontak->deskripsi }}</p>
+                        @endforeach
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-5">
-                        <a href="#" class="btn wantToWork-btn"><img src="{{ asset('/img/icon/call2.png' )}}" alt=""> Hungi kami</a>
+                        <a href="#" class="btn wantToWork-btn"><img src="{{ asset('/img/icon/call2.png' )}}" alt=""> Hubungi Kami</a>
                     </div>
                 </div>
             </div>
@@ -262,7 +267,7 @@
     <!-- Company achievement End -->
     
     <!--? About Area  -->
-    <section class="about-area2 pb-bottom mt-30">
+    <section class="about-area2 mt-30">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-12">
