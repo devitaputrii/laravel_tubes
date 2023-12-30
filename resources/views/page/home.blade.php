@@ -2,7 +2,6 @@
 
 @section('content')
     <!--? slider Area Start-->
-<<<<<<< HEAD
     
     @forelse ($homes as $index => $home)
         <section class="slider-area hero-overly" style="margin-top: -1px; background-image: url({{ $home->img_banner }}); background-repeat: no-repeat; background-position: top center;">
@@ -90,99 +89,10 @@
                     </div>
                 </div>
             </div>
-=======
-    <section class="slider-area hero-overly">
-        <div class="slider-active">
-            <!-- Single Slider -->
-            <div class="single-slider slider-height d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-9">
-                            <div class="hero__caption">
-                                <h1 data-animation="fadeInLeft" data-delay="0.2s">Key's Laundry</h1>
-                                <p data-animation="fadeInLeft" data-delay="0.4s">Jasa Laundry Express terbaik di Bandung, kami hadir untuk penuhi kebutuhan laundry Anda</p>
-                                <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Layanan Kami</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>          
-            </div>
-        </div>
-    </section>
-    <!-- slider Area End-->
-
-    <!--? Services Area Start -->
-    <section class="services-area pt-top pb-20 mb-60">
-        <div class="container border-bottom ">
-            <div class="row justify-content-center ">
-                <div class="col-xl-7 col-lg-8">
-                    <div class="section-tittle text-center mb-55">
-                        <span class="element">Proses kami</span>
-                        <h2>Bagaimana kami bekerja</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cat text-center">
-                        <div class="cat-icon">
-                            <img src="{{ asset('/img/icon/time-fast-svgrepo-com.svg') }}" alt="">
-                        </div>
-                        <div class="cat-cap">
-                            <h5><a href="/layanan">Proses Pengerjaan Kilat</a></h5>
-                            <p>KEY’S Laundry Telkom University memiliki salah satu keunggulan, yaitu proses pengerjaan KILAT terhadap laundry pelanggan</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cat text-center">
-                        <div class="cat-icon">
-                            <img src="{{ asset('/img/icon/services-icon2.svg') }}" alt="">
-                        </div>
-                        <div class="cat-cap">
-                            <h5><a href="services.html">Laundry Berkualitas</a></h5>
-                            <p>KEY’S Laundry Telkom University selalu menjaga kualitas pakaian anda dengan hanya menggunakan deterjen pilihan</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="single-cat text-center">
-                        <div class="cat-icon">
-                            <img src="{{ asset('/img/icon/indonesian-rupiah-indonesia-svgrepo-com.svg')}}" alt="">
-                        </div>
-                        <div class="cat-cap">
-                            <h5><a href="services.html">Harga Terjangkau</a></h5>
-                            <p>KEY’S Laundry Telkom University memiliki harga yang terjangkau untuk mahasiswa Telkom hanya Rp6000</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services End -->
-    
-    <!--? Offer-services Start  -->
-    <section class="offer-services pb-bottom2">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-7 col-lg-8">
-                    <div class="section-tittle text-center mb-55">
-                        @forelse ($layanans as $index => $layanan)
-                            <span class="element">{{ $layanan->tema }}</span>
-                            <h2>{{ $layanan->sub_tema }}</h2>
-                            @break
-                        @empty
-                            <p>No posts available.</p>
-                        @endforelse
-                    </div>
-                </div>
-            </div>
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
             <div class="row no-gutters">
                 @forelse ($layanans as $index => $layanan)
                     <div class="col-lg-6 col-md-6">
                         <div class="single-offers">
-<<<<<<< HEAD
                             @if (Str::contains($layanan->img1, 'layanan'))
                                 <img src="{{ asset('storage/' . $layanan->img1) }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
                             @else
@@ -197,13 +107,6 @@
                                         @else
                                             <img src="{{ $layanan->img_icon }}" alt="">
                                         @endif
-=======
-                            <img src="{{ $layanan->img1 }}" alt="" class=" w-100">
-                            @if($index % 2 != 0)
-                                <div class="offers-caption text-center">
-                                    <div class="cat-icon">
-                                        <img src="{{ $layanan->img_icon }}" alt="">
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                     </div>
                                     <div class="cat-cap">
                                         <h5><a href="#">{{ $layanan->judul }}</a></h5>
@@ -215,7 +118,6 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="single-offers">
-<<<<<<< HEAD
                             @if (Str::contains($layanan->img2, 'layanan'))
                                 <img src="{{ asset('storage/' . $layanan->img2) }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
                             @else
@@ -229,13 +131,6 @@
                                         @else
                                             <img src="{{ $layanan->img_icon }}" alt="">
                                         @endif
-=======
-                            <img src="{{ $layanan->img2 }}" alt="" class=" w-100">
-                            @if($index % 2 == 0)
-                                <div class="offers-caption text-center">
-                                    <div class="cat-icon">
-                                        <img src="{{ $layanan->img_icon }}" alt="">
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                                     </div>
                                     <div class="cat-cap">
                                         <h5><a href="#">{{ $layanan->judul }}</a></h5>
@@ -260,7 +155,6 @@
                 <div class="row align-items-center justify-content-between">
                     <div class="col-xl-8 col-lg-9 col-md-7">
                         <div class="wantToWork-caption wantToWork-caption2">
-<<<<<<< HEAD
                             @foreach($kontaks as $kontak)
                                 <h2>{{ $kontak->judul }}</h2>
                                 <p>{{ $kontak->deskripsi }}</p>
@@ -271,16 +165,6 @@
                         <a href="#" class="btn wantToWork-btn">
                             <img src="{{ asset('/img/icon/call2.png') }}" alt=""> Hubungi Kami
                         </a>
-=======
-                        @foreach($kontaks as $kontak)
-                            <h2>{{ $kontak->judul }}</h2>
-                            <p>{{ $kontak->deskripsi }}</p>
-                        @endforeach
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-5">
-                        <a href="#" class="btn wantToWork-btn"><img src="{{ asset('/img/icon/call2.png' )}}" alt=""> Hubungi Kami</a>
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
                     </div>
                 </div>
             </div>
@@ -288,110 +172,10 @@
     </section>
     <!-- Want To work End -->
     
-    <!-- Testimonials_start -->
-    <section class="testimonials-area testimonials-overly  position-relative">
-        <div class="container">
-            <div class="border-bottom section-padding40 ">
-                <div class="row">
-                    <div class="col-xl-12 ">
-                        <!-- testmonial-image -->
-                        <div class="testmonial-nav text-center">
-<<<<<<< HEAD
-                            @forelse ($ulasans as $index => $ulasan)
-                                <div class="testmonial-thumb">
-                                    @if (Str::contains($ulasan->user->img, 'foto_user'))
-                                        <img src="{{ asset('storage/' . $ulasan->user->img) }}" alt="">
-                                    @else
-                                        <img src="{{ asset($ulasan->user->img) }}" alt="">
-                                    @endif
-                                </div>
-                            @empty
-                                <p>No posts available.</p>
-                            @endforelse
-                        </div>
-                        <div class="testmonial-item-active text-center">
-                            <!-- testimonial-single-items -->
-                            @forelse ($ulasans as $index => $ulasan)
-                                <div class="testmonial-item ">
-                                    <p class="pera">{{$ulasan->ulasan}}</p>
-                                    <div class="rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <p>{{$ulasan->user->name}}</p>
-                                </div>
-                            @empty
-                                <p>No posts available.</p>
-                            @endforelse
-=======
-                            <div class="testmonial-thumb">
-                                <img src="{{ asset('/img/gallery/testimonila1.png' )}}" alt="">
-                            </div>
-                            <div class="testmonial-thumb">
-                                <img src="{{ asset('/img/gallery/testimonila2.png' )}}" alt="">
-                            </div>
-                            <div class="testmonial-thumb">
-                                <img src="{{ asset('/img/gallery/testimonila3.png' )}}" alt="">
-                            </div>
-                            <div class="testmonial-thumb">
-                                <img src="{{ asset('/img/gallery/testimonila2.png' )}}" alt="">
-                            </div>
-                        </div>
-                        <div class="testmonial-item-active text-center">
-                            <!-- testimonial-single-items -->
-                            <div class="testmonial-item ">
-                                <p class="pera">The automated process starts as soon as your clothes go into the<br> machine. The outcome is gleaming clothes!</p>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p> - Rupaya</p>
-                            </div>
-                            <!-- testimonial-single-items -->
-                            <div class="testmonial-item ">
-                                <p class="pera">The automated process starts as soon as your clothes go into the<br> machine. The outcome is gleaming clothes!</p>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p> - Rupaya</p>
-                            </div>
-                            <!-- testimonial-single-items -->
-                            <div class="testmonial-item ">
-                                <p class="pera">The automated process starts as soon as your clothes go into the<br> machine. The outcome is gleaming clothes!</p>
-                                <div class="rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <p> - Rupaya</p>
-                            </div>
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Testimonials_end -->
+    
     
     <!--? Company achievement Start -->
-<<<<<<< HEAD
     <!-- <section class="services-area section-padding40 fix">
-=======
-   <section class="services-area section-padding40 fix">
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-7 col-lg-8">
@@ -442,7 +226,6 @@
     <section class="about-area2 mt-30">
         <div class="container">
             <div class="row align-items-center">
-<<<<<<< HEAD
                 @foreach($tentang_kamis as $tentang_kami)
                     <div class="col-lg-6 col-md-12">
                         <!-- about-img -->
@@ -467,27 +250,6 @@
                         </div>
                     </div>
                 @endforeach
-=======
-                <div class="col-lg-6 col-md-12">
-                    <!-- about-img -->
-                    <div class="about-img ">
-                        <img src="{{ asset('/gambar/lokasi laundry.jpeg' )}}" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="about-caption mb-50">
-                        <!-- Section Tittle -->
-                        <div class="section-tittle mb-25">
-                            <h2>Tentang kami</h2>
-                        </div>
-                        <p class="mb-20">
-                        Key's Laundry adalah layanan laundry yang didedikasikan untuk memberikan pengalaman laundry yang cepat, bersih, dan handal. Kami memiliki tim profesional yang terlatih dengan baik dan menggunakan peralatan canggih untuk memastikan pakaian Anda dicuci dan dirawat dengan baik. 
-                        </p>
-                        <p class="mb-30">The automated process starts as soon as your clothes go into the machine. The outcome is gleaming clothes!</p> 
-                        <a href="about.html" class="btn">About Us</a> 
-                    </div>
-                </div>
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
             </div>
         </div>
     </section>

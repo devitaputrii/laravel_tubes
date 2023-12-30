@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
 Route::resource('/', HomeController::class);
 Route::redirect('/home', '/');
 
@@ -75,28 +74,3 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-=======
-Route::get('/', function () {
-    return view('page.home');
-});
-
-Route::get('/galeri', function () {
-    return view('page.galeri');
-});
-
-Route::get('/daftar_harga', function () {
-    return view('daftar_harga');
-});
-
-Route::get('/keluhan', function () {
-    return view('page.keluhan');
-});
-
-// Route::get('/login', function () {
-//     return view('page.login');
-// });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
