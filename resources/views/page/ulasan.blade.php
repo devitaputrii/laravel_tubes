@@ -46,7 +46,8 @@
                                 </div>
                             </form>
                         </div>
-
+                        
+                        
                         <div class="col-lg-12 col-md-12">
                             <div class="whole-wrap">
                                 <div class="container box_1170">
@@ -58,15 +59,64 @@
                                                 <div class="country" style="text-align: center;">Rating</div>
                                                 <div class="percentage" style="text-align: center;">Judul Ulasan</div>
                                                 <div class="percentage"style="text-align: center;">Ulasan</div>
+                                                <div class="country" style="text-align: center;">Actions</div>
                                             </div>
                                             @forelse ($ulasans as $index => $ulasan)
-                                                <div class="table-row">
-                                                    <div class="serial">{{ $index + 1 }}</div>
-                                                    <div class="country">{{ $ulasan->user->name}}</div>
-                                                    <div class="country"><img src="{{ asset('gambar/rating(' . $ulasan->rating . ').png') }}" alt="Rating Image" style="width: 50%;"></div>
-                                                    <div class="country" style="text-align: center;">{{ $ulasan->judul }}</div>
-                                                    <div class="percentage" >{{ $ulasan->ulasan }}</div>
-                                                </div>
+                                                @if(auth()->check() && auth()->user()->id === $ulasan->user_id)
+                                                    <div class="table-row">
+                                                        <div class="serial">{{ $index + 1 }}</div>
+                                                        <div class="country">{{ $ulasan->user->name}}</div>
+                                                        <div class="country"><img src="{{ asset('gambar/rating(' . $ulasan->rating . ').png') }}" alt="Rating Image" style="width: 50%;"></div>
+                                                        <div class="country" style="text-align: center;">{{ $ulasan->judul }}</div>
+                                                        <div class="percentage" >{{ $ulasan->ulasan }}</div>
+                                                        <div class="country d-flex justify-content-center">
+                                                            <button type="button" class="genric-btn info circle arrow small mr-2" data-toggle="modal" data-target="#editModalUlasan{{ $ulasan->id }}">Edit</button>
+                                                            
+                                                            <form action="{{ route('soft-delete-ulasan', ['id' => $ulasan->id]) }}" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="genric-btn danger circle arrow small" onclick="return confirm('Apakah kamu yakin mau menghapus ulasan ini?')">Delete</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="editModalUlasan{{ $ulasan->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalUlasanLabel{{ $ulasan->id }}" aria-hidden="true">
+                                                        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h2 class="modal-title" id="editModalUlasanLabel{{ $ulasan->id }}">Edit Ulasan</h2>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <!-- Add your form fields here for editing user details -->
+                                                                <form id="editForm" enctype="multipart/form-data" action="{{ route('update-ulasan', ['id' => $ulasan->id]) }}" method="post">
+                                                                    <div class="modal-body">
+                                                                            @csrf <!-- Laravel CSRF token -->
+                                                                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                                <h3 class="mb-10">Rating</h3>
+                                                                                <input type="number" name="Rating" id="Rating" placeholder="Rating" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Rating'" required class="single-input" min="1" max="5" value="{{ $ulasan->rating }}">
+                                                                            </div>
+                                                                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                                <h3 class="mb-10">Judul Ulasan</h3>
+                                                                                <input type="text" name="JudulUlasan" id="JudulUlasan" placeholder="JudulUlasan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Judul Ulasan'" required class="single-input" value="{{ $ulasan->judul }}">
+                                                                            </div>
+                                                                            <div class="form-group" style="padding-left: 20px; padding-right: 20px;">
+                                                                                <h3 class="mb-10">Ulasan</h3>
+                                                                                <textarea class="single-textarea" name="Ulasan" id="Ulasan" placeholder="Ulasan" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pesan Keluhan'" required>{{ $ulasan->ulasan }}</textarea>
+                                                                            </div>
+                                                                            <!-- Add other form fields as needed -->
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="genric-btn primary circle arrow small" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="genric-btn primary circle arrow small">Simpan</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endif
                                             @empty
                                                 <p>No services available.</p>
                                             @endforelse
