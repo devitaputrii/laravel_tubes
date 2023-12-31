@@ -1,53 +1,263 @@
 @extends('layouts.app')
 
 @section('content')
-  
-    <main class="container">
-        <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-          <div class="col-lg-6 px-0">
-            <h1 class="fw-light"><b>Jasa Laundry Express Terbaik di Bandung</b></h1>
-            <p class="lead my-3">Selamat datang di Key's Laundry, destinasi terbaik untuk kebutuhan laundry Anda! Kami memahami betapa berharganya waktu Anda, 
-              dan itulah mengapa kami hadir untuk membuat hidup Anda lebih mudah dengan layanan laundry berkualitas tinggi.</p>
-              <img  src="{{ asset('/gambar/logo laundry.png')}}"  class="posisilogo" alt="..." > 
-          </div>
-        </div>
-
-        <section class="py-5 text-center container ">
-            <div class="row py-lg">
-              <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="layanan"><b>Layanan Kami</b></h1>
-          </section>
+    <!--? slider Area Start-->
     
-          <div class="card-group ">
-            <div class="card  ">
-              <div class="card-body bg-b">
-                <h5 class="card-title">Proses Pengerjaan Kilat</h5>
-                <p class="card-text">KEY’S Laundry Telkom University memiliki salah satu keunggulan yang - sangat unggul yaitu proses pengerjaan KILAT terhadap laundry pelanggan.
-                     KEY’S Laundry  memiliki beberapa pilihan layanan proses pengerjaan laundry yaitu LAUNDRY EXPRESS 1 HARI, 
-                    LAUNDRY EXPRESS 2 HARI, DANLAUNDRY EXPRESS 3 HARI, sesuai dengan kebutuhan Anda.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-
+    @forelse ($homes as $index => $home)
+        <section class="slider-area hero-overly" style="margin-top: -1px; background-image: url({{ $home->img_banner }}); background-repeat: no-repeat; background-position: top center;">
+    @empty
+        <section class="slider-area hero-overly">
+    @endforelse
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-9 col-md-10 col-sm-9">
+                            <div class="hero__caption">
+                                @forelse ($homes as $index => $home)
+                                    <h1 data-animation="fadeInLeft" data-delay="0.2s">{{ $home->judul }}</h1>
+                                    <p data-animation="fadeInLeft" data-delay="0.4s">{{ $home->deskirpsi }}</p>
+                                @empty
+                                    <p>No posts available.</p>
+                                @endforelse
+                                <a href="/daftar-harga" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Layanan Kami</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>          
             </div>
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Laundry Berkualitas</h5>
-                <p class="card-text">KEY’S Laundry Telkom University selalu mengecek ulang kualitas yang dikeriakan oleh karyawan kami. Bahan-bahan yang digunakan merupakan bahan-bahan
-                     kualitas dan di olah sendiri oleh laundry kami. Dari pengerjaan yang selalu double check, bahan pencucian yang digunakan terjamin, hingga proses penyetrikaan karyawan 
-                     selalu menjaga kulaitas agar menghasilkan hasil laundry yang baik.</p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Harga Terjangkau</h5>
-                <p class="card-text">KEY’S Laundry Telkom University memiliki harga yang terjangkau untuk anak anak mahasiswa Telkom dengan enam ribu rupiah </p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </div>
+    </section>
+    <!-- slider Area End-->
 
-
+    <!--? Services Area Start -->
+    <section class="services-area pt-top pb-20 mb-60">
+        <div class="container border-bottom ">
+            <div class="row justify-content-center ">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        @forelse ($prosess as $index => $proses)
+                            <span class="element">{{ $proses->tema }}</span>
+                            <h2>{{ $proses->sub_tema }}</h2>
+                            @break
+                        @empty
+                            <p>No posts available.</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @forelse ($prosess as $index => $proses)
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-cat text-center">
+                            <div class="cat-icon">
+                                @if (Str::contains($proses->icon, 'proses'))
+                                    <img src="{{ asset('storage/' . $proses->icon) }}" alt="">
+                                @else
+                                    <img src="{{ asset($proses->icon) }}" alt="">
+                                @endif
+                                
+                            </div>
+                            <div class="cat-cap">
+                                <h5><a href="/layanan">{{ $proses->judul }}</a></h5>
+                                <p>{{ $proses->deskripsi }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <p>No posts available.</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
+    <!-- Services End -->
+    
+    <!--? Offer-services Start  -->
+    <section class="offer-services pb-bottom2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        @forelse ($layanans as $index => $layanan)
+                            <span class="element">{{ $layanan->tema }}</span>
+                            <h2>{{ $layanan->sub_tema }}</h2>
+                            @break
+                        @empty
+                            <p>No posts available.</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                @forelse ($layanans as $index => $layanan)
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-offers">
+                            @if (Str::contains($layanan->img1, 'layanan'))
+                                <img src="{{ asset('storage/' . $layanan->img1) }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @else
+                                <img src="{{ $layanan->img1 }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @endif
+                            
+                            @if($index % 2 != 0)
+                                <div class="offers-caption text-center">
+                                    <div class="cat-icon">
+                                        @if (Str::contains($layanan->img_icon, 'layanan'))
+                                            <img src="{{ asset('storage/' . $layanan->img_icon) }}" alt="">
+                                        @else
+                                            <img src="{{ $layanan->img_icon }}" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="cat-cap">
+                                        <h5><a href="#">{{ $layanan->judul }}</a></h5>
+                                        <p>{{ $layanan->deskripsi }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="single-offers">
+                            @if (Str::contains($layanan->img2, 'layanan'))
+                                <img src="{{ asset('storage/' . $layanan->img2) }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @else
+                                <img src="{{ $layanan->img2 }}" alt="" class=" w-100" style="width: 585px; height: 598px;">
+                            @endif
+                            @if($index % 2 == 0)
+                                <div class="offers-caption text-center">
+                                    <div class="cat-icon">
+                                        @if (Str::contains($layanan->img_icon, 'layanan'))
+                                            <img src="{{ asset('storage/' . $layanan->img_icon) }}" alt="">
+                                        @else
+                                            <img src="{{ $layanan->img_icon }}" alt="">
+                                        @endif
+                                    </div>
+                                    <div class="cat-cap">
+                                        <h5><a href="#">{{ $layanan->judul }}</a></h5>
+                                        <p>{{ $layanan->deskripsi }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                @empty
+                    <p>No posts available.</p>
+                @endforelse
+            </div>
+        </div>
+    </section>
+    <!-- Offer-services End  -->
+    
+    <!--? Want To work -->
+    <section class="container">
+        <section class="wantToWork-area" data-background="{{ asset('/img/gallery/section_bg01.png' )}}">
+            <div class="wants-wrapper w-padding2">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-xl-8 col-lg-9 col-md-7">
+                        <div class="wantToWork-caption wantToWork-caption2">
+                            @foreach($kontaks as $kontak)
+                                <h2>{{ $kontak->judul }}</h2>
+                                <p>{{ $kontak->deskripsi }}</p>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5">
+                        <a href="#" class="btn wantToWork-btn">
+                            <img src="{{ asset('/img/icon/call2.png') }}" alt=""> Hubungi Kami
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Want To work End -->
+    
+    
+    
+    <!--? Company achievement Start -->
+    <!-- <section class="services-area section-padding40 fix">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-8">
+                    <div class="section-tittle text-center mb-55">
+                        <span class="element">Fun Fact</span>
+                        <h2>Company achievement</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>4000</span>
+                            <p>The automated process starts as soon as your clothes go into the machine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>300+</span>
+                            <p>The automated process starts as soon as your clothes go into the machine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-cat text-center">
+                        <div class="cat-cap">
+                            <span>95%</span>
+                            <p>The automated process starts as soon as your clothes go into the machine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bottom-bt">
+                            <img src="{{ asset('/img/gallery/company-bg.png' )}}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Company achievement End -->
+    
+    <!--? About Area  -->
+    <section class="about-area2 mt-30">
+        <div class="container">
+            <div class="row align-items-center">
+                @foreach($tentang_kamis as $tentang_kami)
+                    <div class="col-lg-6 col-md-12">
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            
+                            @if (Str::contains($tentang_kami->img, 'tentang'))
+                                <img src="{{ asset('storage/' . $tentang_kami->img) }}" alt="">
+                            @else
+                            <img src="{{ asset($tentang_kami->img)}}" alt="">
+                            @endif
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="about-caption mb-50">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle mb-25">
+                                <h2>{{ $tentang_kami->judul }}</h2>
+                            </div>
+                            <p class="mb-20">
+                                {{ $tentang_kami->deskripsi }}
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- About Area End -->
+    <!--?  Map Area start  -->
+    <!-- <div class="Map-area">
+        <img src="{{ asset('/img/gallery/Map.png' )}}" alt="" class="w-100">
+    </div> -->
+    <!-- Map Area End -->
 @endsection
 

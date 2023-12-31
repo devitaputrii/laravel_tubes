@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Models\DaftarHarga;
+use App\Models\Kontak;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,13 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function showLoginForm()
+    {
+        $uniques = DaftarHarga::distinct()->pluck('kelompok');
+        $kontaks = Kontak::get();
+
+        return view('auth.login', compact('uniques', 'kontaks'));
     }
 }
