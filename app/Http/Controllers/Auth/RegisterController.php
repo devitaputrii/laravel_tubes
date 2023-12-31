@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\DaftarHarga;
+use App\Models\Kontak;
 
 class RegisterController extends Controller
 {
@@ -69,5 +71,13 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    public function showRegistrationForm()
+    {
+        $uniques = DaftarHarga::distinct()->pluck('kelompok');
+        $kontaks = Kontak::get();
+
+        return view('auth.register', compact('uniques', 'kontaks'));
     }
 }
