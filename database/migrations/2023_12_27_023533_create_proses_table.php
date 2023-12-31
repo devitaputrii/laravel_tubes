@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
+        Schema::create('proses', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamp('expires_at')->nullable();
+            $table->string('tema');
+            $table->string('sub_tema');
+            $table->string('icon')->default('/img/icon/services-icon2.svg');
+            $table->string('judul');
+            $table->text('deskripsi');
+            $table->integer('user_id')->default(1);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('proses');
     }
 };

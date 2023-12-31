@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
+        Schema::create('daftar_hargas', function (Blueprint $table) {
             $table->id();
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamp('expires_at')->nullable();
+            $table->string('kelompok');
+            $table->string('img')->default('/gambar/logo laundry.png');
+            $table->string('name')->nullable();
+            $table->float('minimal')->nullable();
+            $table->integer('estimasi')->nullable();
+            $table->integer('harga')->nullable();
+            $table->integer('user_id')->default(1);
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
         });
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('personal_access_tokens');
+        Schema::dropIfExists('daftar_hargas');
     }
 };
