@@ -8,11 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-<<<<<<< HEAD
 use App\Models\DaftarHarga;
 use App\Models\Kontak;
-=======
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 
 class RegisterController extends Controller
 {
@@ -75,7 +72,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
-<<<<<<< HEAD
 
     public function showRegistrationForm()
     {
@@ -84,6 +80,4 @@ class RegisterController extends Controller
 
         return view('auth.register', compact('uniques', 'kontaks'));
     }
-=======
->>>>>>> 5b41fb7b0812f434c9a8249eda3e900ab1524d3b
 }

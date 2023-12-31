@@ -1,6 +1,6 @@
 
 <!--awal FOOTER-->
- <div class="col-md-12">
+<!-- <div class="col-md-12">
     <div class="row" style="background: rgb(255, 253, 253) 0.562;">
         <div class="container">
             <footer class="footer row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
@@ -13,7 +13,7 @@
             </footer>
         </div>
     </div>
-</div> 
+</div> -->
 
 <footer>
     <!-- Footer Start-->
@@ -104,6 +104,7 @@
 <script src="{{ asset('/js/vendor/jquery-1.12.4.min.js') }}"></script>
 <script src="{{ asset('/js/popper.min.js') }}"></script>
 <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
+
 <!-- Jquery Mobile Menu -->
 <script src="{{ asset('/js/jquery.slicknav.min.js') }}"></script>
 

@@ -13,6 +13,7 @@ class Komplain extends Model
         'nama',
         'email',
         'img_nota',
+        'status',
         'deskripsi',
     ];
 

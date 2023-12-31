@@ -84,7 +84,17 @@ class KomplainController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // Find the Komplain by ID
+        $komplain = Komplain::findOrFail($id);
+
+        // Toggle the status
+        $komplain->status = ($komplain->status == 'Selesai') ? 'Komplain' : 'Selesai';
+
+        // Save the changes
+        $komplain->save();
+
+        // Redirect back or to a success page
+        return redirect()->back()->with('success', 'Status updated successfully');
     }
 
     /**
@@ -93,5 +103,13 @@ class KomplainController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function softDelete($id)
+    {
+        $komplain = Komplain::findOrFail($id);
+        $komplain->delete(); // This will set the 'deleted_at' timestamp
+
+        return redirect()->back()->with('success', 'Komplain soft deleted successfully');
     }
 }
