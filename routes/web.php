@@ -44,6 +44,8 @@ Route::post('/update-tentang/{id}', 'TentangKamiController@update')->name('updat
 Route::post('/update-galeri/{id}', 'GaleriController@update')->name('update-galeri');
 Route::post('/update-kelompok-daftar-harga/{kelompok}', 'DaftarHargaController@updateKelompok')->name('update-kelompok-daftar-harga');
 Route::post('/update-daftar-harga/{id}', 'DaftarHargaController@update')->name('update-daftar-harga');
+Route::post('/update-ulasan/{id}', 'UlasanController@update')->name('update-ulasan');
+Route::post('/update-komplain/{id}', 'KomplainController@update')->name('update-komplain');
 
 //Delete
 Route::delete('/soft-delete-user/{id}', 'UserController@softDelete')->name('soft-delete-user');
@@ -52,6 +54,8 @@ Route::delete('/soft-delete-layanan/{id}', 'LayananController@softDelete')->name
 Route::delete('/soft-delete-galeri/{id}', 'GaleriController@softDelete')->name('soft-delete-galeri');
 Route::delete('/soft-delete-daftar-harga/{id}', 'DaftarHargaController@softDelete')->name('soft-delete-daftar-harga');
 Route::delete('/soft-delete-daftar-harga-kelompok/{kelompok}', 'DaftarHargaController@softDeleteKelompok')->name('soft-delete-daftar-harga-kelompok');
+Route::delete('/soft-delete-ulasan/{id}', 'UlasanController@softDelete')->name('soft-delete-ulasan');
+Route::delete('/soft-delete-komplain/{id}', 'KomplainController@softDelete')->name('soft-delete-komplain');
 
 
 //Delete
