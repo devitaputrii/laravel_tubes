@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('email');
             $table->string('img_nota');
+            $table->string('status')->default('Komplain');
             $table->text('deskripsi');
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
