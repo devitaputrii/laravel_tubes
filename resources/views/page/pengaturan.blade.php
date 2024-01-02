@@ -380,7 +380,7 @@
     </section>   
 
     <!-- Layanan -->
-    {{-- <section class="services-area mb-40">
+    <section class="services-area mb-40">
         <div class="container border-bottom pb-20">
             <div class="row justify-content-center pt-50 pb-10">
                 <div class="col-xl-7 col-lg-8">
@@ -591,7 +591,7 @@
                 </div>
             </div>
         </div>
-    </section>   --}}
+    </section>  
 
     <!-- Kontak -->
     <section class="services-area mb-40">
